@@ -1,4 +1,3 @@
-var schedule = require('node-schedule');
 var twitter = require('twitter');
 var request = require('request');
 
@@ -9,7 +8,10 @@ var client = new twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-schedule.scheduleJob('* 0,8,16 * * *', function(){
+
+randomNum = Math.floor(Math.random() * (10 - 1) + 1)
+
+if (randomNum <= 3) {
     var options = {
         url : process.env.OFFICE_API_URL,
         headers: {
@@ -32,4 +34,4 @@ schedule.scheduleJob('* 0,8,16 * * *', function(){
             });
         }
     });
-});
+}
