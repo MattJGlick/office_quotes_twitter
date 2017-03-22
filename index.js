@@ -38,4 +38,6 @@ if (randomNum <= 3) {
             });
         }
     });
+} else {
+    console.log("number was too low, don't want to truly post ever hour")
 }
