@@ -20,14 +20,18 @@ if (randomNum <= 3) {
     };
 
     request(options, function(error, response, data) {
-        if(error) throw error;
+        if(error) {
+            console.log(error);
+        }
 
         if (!error && response.statusCode == 200) {
             body = JSON.parse(data)
             tweet = body.quote.quote
 
             client.post('statuses/update', {status: tweet},  function(error, tweet, response) {
-                if(error) throw error;
+                if(error) {
+                    console.log(error);
+                }
 
                 console.log(tweet);
                 console.log(response);
