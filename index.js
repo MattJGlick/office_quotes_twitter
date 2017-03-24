@@ -9,9 +9,12 @@ var client = new twitter({
 });
 
 
-randomNum = Math.floor(Math.random() * (10 - 1) + 1)
+randomNum = Math.floor(Math.random() * (20 - 1) + 1)
+console.log(randomNum)
 
 if (randomNum <= 3) {
+    console.log("inside")
+    return;
     var options = {
         url : process.env.OFFICE_API_URL,
         headers: {
