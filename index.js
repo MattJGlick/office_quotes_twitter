@@ -9,10 +9,10 @@ var client = new twitter({
 });
 
 
-randomNum = Math.floor(Math.random() * (20 - 1) + 1)
+randomNum = Math.floor(Math.random() * (101 - 1) + 1)
 console.log(randomNum)
 
-if (randomNum <= 3) {
+if (randomNum <= (process.env.CHANCE * 100)) {
     console.log("inside")
     return;
     var options = {
