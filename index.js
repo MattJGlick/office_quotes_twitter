@@ -14,7 +14,7 @@ console.log(randomNum)
 
 if (randomNum <= (process.env.CHANCE * 100)) {
     console.log("inside")
-    return;
+
     var options = {
         url : process.env.OFFICE_API_URL,
         headers: {
@@ -37,7 +37,6 @@ if (randomNum <= (process.env.CHANCE * 100)) {
                 }
 
                 console.log(tweet);
-                console.log(response);
             });
         }
     });
